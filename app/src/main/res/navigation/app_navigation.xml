@@ -7,12 +7,33 @@
 
     <fragment
         android:id="@+id/categoryFragment"
-        android:name="com.sooq.open.feature.presentation.fragment.CategoryFragment"
-        android:label="fragment_category"
-        tools:layout="@layout/fragment_category" />
+        android:name="com.sooq.open.feature.presentation.fragment.category.CategoryFragment"
+        android:label="Category"
+        tools:layout="@layout/fragment_category" >
+        <action
+            android:id="@+id/action_categoryFragment_to_subCategoryFragment"
+            app:destination="@id/subCategoryFragment" />
+    </fragment>
     <fragment
         android:id="@+id/subCategoryFragment"
-        android:name="com.sooq.open.feature.presentation.fragment.SubCategoryFragment"
-        android:label="fragment_sub_category"
-        tools:layout="@layout/fragment_sub_category" />
+        android:name="com.sooq.open.feature.presentation.fragment.subcategory.SubCategoryFragment"
+        android:label="sub Category"
+        tools:layout="@layout/fragment_sub_category" >
+
+        <argument
+            android:name="id"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_subCategoryFragment_to_filterFragment"
+            app:destination="@id/filterFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/filterFragment"
+        android:name="com.sooq.open.feature.presentation.fragment.filter.FilterFragment"
+        android:label="Filter"
+        tools:layout="@layout/fragment_filter" >
+    <argument
+        android:name="id"
+        app:argType="integer" />
+    </fragment>
 </navigation>
